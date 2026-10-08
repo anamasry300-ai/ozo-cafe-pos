@@ -27,6 +27,29 @@ async function boot() {
   }
 
   const q = () => ($('#m-search').value || '').trim().toLowerCase();
+let waCart = [];
+function waAddToCart(n, pv) {
+  const x = waCart.find(i => i.name === n);
+  if (x) x.qty++; else waCart.push({ name: n, price: pv, qty: 1 });
+  waUpdateCart();
+}
+function waClearCart() { waCart = []; waUpdateCart(); }
+function waUpdateCart() {
+  const c = $('#wa-cart'), b = $('#wa-btn');
+  if (!c || !b) return;
+  if (!waCart.length) {
+    c.innerHTML = ''; b.disabled = true;
+    b.textContent = 'أرسل الطلب عبر واتساب';
+    return;
+  }
+  let sum = 0, txt = '';
+  for (const it of waCart) { sum += it.price * it.qty; txt += it.qty + ' × ' + it.name + '\n'; }
+  c.innerHTML = '<div style="padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff">' + txt.replace(/\n/g, '<br>') + '<div style="margin-top:8px;font-weight:900">الإجمالي: ' + sum.toFixed(sum % 1 ? 2 : 0) + ' ج.م</div></div>';
+  b.disabled = false;
+  const msg = encodeURIComponent('طلب من المنيو:\n' + waCart.map(i => i.qty + ' × ' + i.name + ' — ' + i.price.toFixed(2) + ' ج.م').join('\n') + '\n\nالإجمالي: ' + sum.toFixed(2) + ' ج.م');
+  b.onclick = () => window.open('https://wa.me/2010977662593?text=' + msg, '_blank');
+}
+
 
   function productCard(p) {
     const img = p.image
@@ -39,7 +62,10 @@ async function boot() {
           <div class="m-pname">${esc(p.name)}</div>
           ${p.description ? `<div class="m-pdesc">${esc(p.description)}</div>` : ''}
         </div>
-        <div class="m-price">${p.price.toFixed(p.price % 1 ? 2 : 0)} <span>ج.م</span></div>
+        <div class="m-side">
+          <div class="m-price">${p.price.toFixed(p.price % 1 ? 2 : 0)} <span>ج.م</span></div>
+          <button class="m-add" type="button" data-name="${esc(p.name)}" data-price="${p.price}">＋ إضافة</button>
+        </div>
       </div>`;
   }
 
@@ -68,10 +94,16 @@ async function boot() {
         </section>`;
     }).join('');
     $('#m-main').innerHTML = sections;
+    $('#m-main').querySelectorAll('.m-add').forEach(b => b.onclick = () => {
+      waAddToCart(b.dataset.name, Number(b.dataset.price));
+      b.classList.add('added');
+      setTimeout(() => b.classList.remove('added'), 700);
+    });
   }
 
   renderChips(null);
   renderSections(null);
+  waUpdateCart();
   $('#m-search').addEventListener('input', () => renderSections(null));
 }
 

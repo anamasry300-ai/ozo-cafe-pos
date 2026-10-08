@@ -331,6 +331,24 @@ try {
   await wait(600);
   chk(await menuPage.$$eval('.m-sec', els => els.length) >= 1, 'category filter groups items');
   chk((await menuPage.$$('.m-foot')).length === 0 || (await menuPage.$eval('.m-foot', el => getComputedStyle(el).display)) === 'none', 'footer hidden when no phone/address');
+
+  await menuPage.goto(BASE + '/menu', { waitUntil: 'networkidle2' });
+  await menuPage.waitForSelector('.m-grid', { timeout: 8000 });
+  chk(await menuPage.$eval('#wa-btn', el => el.disabled) === true, 'whatsapp button starts disabled');
+  await menuPage.evaluate(() => document.querySelector('.m-add')?.click());
+  await wait(300);
+  chk(await menuPage.$eval('#wa-btn', el => !el.disabled), 'whatsapp button enables after add');
+  chk((await menuPage.$eval('#wa-cart', el => el.textContent || '')).includes('الإجمالي'), 'cart total shown');
+  await menuPage.evaluate(() => document.querySelector('.m-add')?.click());
+  await wait(300);
+  const cartTxt = await menuPage.$eval('#wa-cart', el => el.textContent || '');
+  chk(cartTxt.includes('2 ×'), 'second add increments quantity');
+  const waHref = await menuPage.evaluate(() => {
+    const b = document.querySelector('#wa-btn');
+    b.click();
+    return b.onclick ? String(b.onclick) : '';
+  });
+  chk(waHref.includes('wa.me/'), 'whatsapp button opens wa.me link');
   await menuPage.close();
 } catch (e) {
   bad++;
