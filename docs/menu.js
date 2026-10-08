@@ -5,7 +5,7 @@ const $ = sel => document.querySelector(sel);
 async function boot() {
   let data;
   try {
-    const r = await fetch('/api/menu');
+    const r = await fetch('menu.json');
     if (!r.ok) throw new Error(String(r.status));
     data = await r.json();
   } catch (e) {

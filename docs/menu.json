@@ -1,0 +1,106 @@
+{
+  "store": {
+    "name": "أوزو OZO",
+    "phone": "",
+    "address": ""
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "بطاطس",
+      "products": [
+        {
+          "id": 1,
+          "name": "بطاطس عادي",
+          "price": 30,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 2,
+          "name": "بطاطس موتزاريلا صوصات",
+          "price": 40,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 3,
+          "name": "بطاطس مكس جبن تركي مدخن",
+          "price": 50,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 4,
+          "name": "بطاطس مكس جبن بسطرمة",
+          "price": 60,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 5,
+          "name": "بطاطس استربس",
+          "price": 65,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 6,
+          "name": "بطاطس زنجر",
+          "price": 70,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 7,
+          "name": "بطاطس شيش",
+          "price": 70,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 8,
+          "name": "بطاطس سجق",
+          "price": 60,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 9,
+          "name": "بطاطس كفتة",
+          "price": 65,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 10,
+          "name": "بطاطس كبدة",
+          "price": 60,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 11,
+          "name": "بطاطس هوت دوج",
+          "price": 55,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 12,
+          "name": "بطاطس كوردن بلو",
+          "price": 60,
+          "image": "",
+          "description": ""
+        },
+        {
+          "id": 13,
+          "name": "بطاطس فاهيتا",
+          "price": 70,
+          "image": "",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}
