@@ -169,19 +169,19 @@ CREATE INDEX IF NOT EXISTS idx_recipe_product ON recipe_items(product_id);
 `;
 
 const SEED_PRODUCTS = [
-  ['صاروخ بطاطس', 30],
-  ['صاروخ موتزاريلا', 40],
-  ['صاروخ مكس جبن تركي', 50],
-  ['صاروخ مكس جبن بسطرمة', 60],
-  ['صاروخ استربس', 65],
-  ['صاروخ زنجر', 70],
-  ['صاروخ شيش', 70],
-  ['صاروخ سجق', 60],
-  ['صاروخ كفتة', 65],
-  ['صاروخ كبدة', 60],
-  ['صاروخ هوت دوج', 55],
-  ['صاروخ كوردن بلو', 60],
-  ['صاروخ فاهيتا', 70],
+  ['صاروخ بطاطس', 30, 'images/sand-01-batates.jpg'],
+  ['صاروخ موتزاريلا', 40, 'images/sand-02-mozzarella.jpg'],
+  ['صاروخ مكس جبن تركي', 50, 'images/sand-03-turkey-cheese.jpg'],
+  ['صاروخ مكس جبن بسطرمة', 60, 'images/sand-04-basterma.jpg'],
+  ['صاروخ استربس', 65, 'images/sand-05-strips.jpg'],
+  ['صاروخ زنجر', 70, 'images/sand-06-zinger.jpg'],
+  ['صاروخ شيش', 70, 'images/sand-07-shish.jpg'],
+  ['صاروخ سجق', 60, 'images/sand-08-sogok.jpg'],
+  ['صاروخ كفتة', 65, 'images/sand-09-kofta.jpg'],
+  ['صاروخ كبدة', 60, 'images/sand-10-kebda.jpg'],
+  ['صاروخ هوت دوج', 55, 'images/sand-11-hotdog.jpg'],
+  ['صاروخ كوردن بلو', 60, 'images/sand-12-cordon.jpg'],
+  ['صاروخ فاهيتا', 70, 'images/sand-13-fajita.jpg'],
 ];
 
 const DEFAULT_SETTINGS = {
@@ -204,8 +204,8 @@ export function initDb() {
   const prodCount = db.prepare('SELECT COUNT(*) c FROM products').get().c;
   if (prodCount === 0) {
     const cat = db.prepare('SELECT id FROM categories WHERE name = ?').get('صواريخ');
-    const ins = db.prepare('INSERT INTO products (name, category_id, price) VALUES (?, ?, ?)');
-    for (const [name, price] of SEED_PRODUCTS) ins.run(name, cat ? cat.id : null, price);
+    const ins = db.prepare('INSERT INTO products (name, category_id, price, image) VALUES (?, ?, ?, ?)');
+    for (const [name, price, image] of SEED_PRODUCTS) ins.run(name, cat ? cat.id : null, price, image || null);
   }
 
   const insSetting = db.prepare('INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)');

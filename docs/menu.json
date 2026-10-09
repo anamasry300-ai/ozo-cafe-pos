@@ -13,91 +13,91 @@
           "id": 1,
           "name": "صاروخ بطاطس",
           "price": 30,
-          "image": "images/fries-plain.jpg",
+          "image": "images/sand-01-batates.jpg",
           "description": ""
         },
         {
           "id": 2,
           "name": "صاروخ موتزاريلا",
           "price": 40,
-          "image": "images/fries-cheese.jpg",
+          "image": "images/sand-02-mozzarella.jpg",
           "description": ""
         },
         {
           "id": 3,
           "name": "صاروخ مكس جبن تركي",
           "price": 50,
-          "image": "images/fries-cheese-herbs.jpg",
+          "image": "images/sand-03-turkey-cheese.jpg",
           "description": ""
         },
         {
           "id": 4,
           "name": "صاروخ مكس جبن بسطرمة",
           "price": 60,
-          "image": "images/fries-loaded-chili.jpg",
+          "image": "images/sand-04-basterma.jpg",
           "description": ""
         },
         {
           "id": 5,
           "name": "صاروخ استربس",
           "price": 65,
-          "image": "images/fries-chicken2.jpg",
+          "image": "images/sand-05-strips.jpg",
           "description": ""
         },
         {
           "id": 6,
           "name": "صاروخ زنجر",
           "price": 70,
-          "image": "images/fries-zinger.jpg",
+          "image": "images/sand-06-zinger.jpg",
           "description": ""
         },
         {
           "id": 7,
           "name": "صاروخ شيش",
           "price": 70,
-          "image": "images/fries-kebab.jpg",
+          "image": "images/sand-07-shish.jpg",
           "description": ""
         },
         {
           "id": 8,
           "name": "صاروخ سجق",
           "price": 60,
-          "image": "images/fries-hotdog.jpg",
+          "image": "images/sand-08-sogok.jpg",
           "description": ""
         },
         {
           "id": 9,
           "name": "صاروخ كفتة",
           "price": 65,
-          "image": "images/fries-kebab2.jpg",
+          "image": "images/sand-09-kofta.jpg",
           "description": ""
         },
         {
           "id": 10,
           "name": "صاروخ كبدة",
           "price": 60,
-          "image": "images/fries-meat.jpg",
+          "image": "images/sand-10-kebda.jpg",
           "description": ""
         },
         {
           "id": 11,
           "name": "صاروخ هوت دوج",
           "price": 55,
-          "image": "images/fries-dip.jpg",
+          "image": "images/sand-11-hotdog.jpg",
           "description": ""
         },
         {
           "id": 12,
           "name": "صاروخ كوردن بلو",
           "price": 60,
-          "image": "images/fries-cordon.jpg",
+          "image": "images/sand-12-cordon.jpg",
           "description": ""
         },
         {
           "id": 13,
           "name": "صاروخ فاهيتا",
           "price": 70,
-          "image": "images/fries-fajita.jpg",
+          "image": "images/sand-13-fajita.jpg",
           "description": ""
         }
       ]
