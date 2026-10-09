@@ -13,91 +13,91 @@
           "id": 1,
           "name": "بطاطس عادي",
           "price": 30,
-          "image": "",
+          "image": "images/fries-plain.jpg",
           "description": ""
         },
         {
           "id": 2,
           "name": "بطاطس موتزاريلا صوصات",
           "price": 40,
-          "image": "",
+          "image": "images/fries-cheese.jpg",
           "description": ""
         },
         {
           "id": 3,
           "name": "بطاطس مكس جبن تركي مدخن",
           "price": 50,
-          "image": "",
+          "image": "images/fries-cheese-herbs.jpg",
           "description": ""
         },
         {
           "id": 4,
           "name": "بطاطس مكس جبن بسطرمة",
           "price": 60,
-          "image": "",
+          "image": "images/fries-loaded-chili.jpg",
           "description": ""
         },
         {
           "id": 5,
           "name": "بطاطس استربس",
           "price": 65,
-          "image": "",
+          "image": "images/fries-chicken2.jpg",
           "description": ""
         },
         {
           "id": 6,
           "name": "بطاطس زنجر",
           "price": 70,
-          "image": "",
+          "image": "images/fries-zinger.jpg",
           "description": ""
         },
         {
           "id": 7,
           "name": "بطاطس شيش",
           "price": 70,
-          "image": "",
+          "image": "images/fries-kebab.jpg",
           "description": ""
         },
         {
           "id": 8,
           "name": "بطاطس سجق",
           "price": 60,
-          "image": "",
+          "image": "images/fries-hotdog.jpg",
           "description": ""
         },
         {
           "id": 9,
           "name": "بطاطس كفتة",
           "price": 65,
-          "image": "",
+          "image": "images/fries-kebab2.jpg",
           "description": ""
         },
         {
           "id": 10,
           "name": "بطاطس كبدة",
           "price": 60,
-          "image": "",
+          "image": "images/fries-meat.jpg",
           "description": ""
         },
         {
           "id": 11,
           "name": "بطاطس هوت دوج",
           "price": 55,
-          "image": "",
+          "image": "images/fries-dip.jpg",
           "description": ""
         },
         {
           "id": 12,
           "name": "بطاطس كوردن بلو",
           "price": 60,
-          "image": "",
+          "image": "images/fries-cordon.jpg",
           "description": ""
         },
         {
           "id": 13,
           "name": "بطاطس فاهيتا",
           "price": 70,
-          "image": "",
+          "image": "images/fries-fajita.jpg",
           "description": ""
         }
       ]

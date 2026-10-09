@@ -7,6 +7,15 @@ fs.copyFileSync('public/menu.css', 'docs/menu.css');
 fs.copyFileSync('public/logo.jpeg', 'docs/logo.jpeg');
 if (fs.existsSync('public/js/ui.js')) fs.copyFileSync('public/js/ui.js', 'docs/js/ui.js');
 
+fs.rmSync('docs/images', { recursive: true, force: true });
+if (fs.existsSync('public/images')) {
+  fs.mkdirSync('docs/images', { recursive: true });
+  for (const f of fs.readdirSync('public/images')) {
+    const src = 'public/images/' + f;
+    if (fs.statSync(src).isFile()) fs.copyFileSync(src, 'docs/images/' + f);
+  }
+}
+
 let js = fs.readFileSync('public/menu.js', 'utf8')
   .replace("fetch('/api/menu')", "fetch('menu.json')")
   .replace("qrImg.src = '/api/qr?data=' + encodeURIComponent(location.href);", "qrImg.src = 'qr.svg';");
