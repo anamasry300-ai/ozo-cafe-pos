@@ -2,6 +2,35 @@ import { esc } from './js/ui.js';
 
 const $ = sel => document.querySelector(sel);
 
+const FOOD_ICONS = [
+  [/بطاطس|شيبس|شيبسي|فرايد أخضر/, '🍟'],
+  [/برجر|برغر|هامبرغر/, '🍔'],
+  [/بيتزا|بيتز/, '🍕'],
+  [/شاورما|شاورمة/, '🌯'],
+  [/دجاج|فرايد|كرسبي|ناجتس|ستربس/, '🍗'],
+  [/ساندويتش|ساندوتش|توست|كلوب/, '🥪'],
+  [/هوت ?دوج|هوتدوج/, '🌭'],
+  [/سلطة|سلاط/, '🥗'],
+  [/عصير|سموذي|فريش/, '🧃'],
+  [/مشروب|مياه|ماء|كولا|بيبسي|سودا/, '🥤'],
+  [/قهوة|قهوه|لاتيه|كابتشينو|إسبريسو|نسكافيه/, '☕'],
+  [/شاي|شاى/, '🍵'],
+  [/حلو|كيك|تورتة|تورت|بسكويت|دونات|وافل/, '🍰'],
+  [/آيس|ايس|مثلجات|جيلاتي|شيك/, '🍦'],
+  [/شوربة|شوربه|سوب/, '🍲'],
+  [/كسكس|أرز|ارز|مكرونة|مكرونه|باستا/, '🍝'],
+  [/فطير|فطائر|مشلتت|فطيرة/, '🥐'],
+];
+function foodIcon(name) {
+  const n = String(name || '');
+  for (const [re, ico] of FOOD_ICONS) if (re.test(n)) return ico;
+  return '🍽️';
+}
+function catIcon(name) {
+  const ico = foodIcon(name);
+  return ico === '🍽️' ? (String(name || '').trim().charAt(0) || '📋') : ico;
+}
+
 async function boot() {
   let data;
   try {
@@ -54,7 +83,7 @@ function waUpdateCart() {
   function productCard(p) {
     const img = p.image
       ? `<img class="m-pimg" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">`
-      : `<div class="m-pimg m-ph">${esc((p.name || '?').charAt(0))}</div>`;
+      : `<div class="m-pimg m-ph"><span>${foodIcon(p.name)}</span></div>`;
     return `
       <div class="m-item">
         ${img}
@@ -71,7 +100,7 @@ function waUpdateCart() {
 
   function renderChips(activeCat) {
     $('#m-chips').innerHTML = [{ id: null, name: 'الكل' }, ...data.categories].map(c => `
-      <button class="m-chip ${c.id === activeCat ? 'active' : ''}" data-cat="${c.id ?? ''}" type="button">${esc(c.name)}</button>
+      <button class="m-chip ${c.id === activeCat ? 'active' : ''}" data-cat="${c.id ?? ''}" type="button"><span class="m-chip-ico">${c.id === null ? '🍽️' : catIcon(c.name)}</span>${esc(c.name)}</button>
     `).join('');
     $('#m-chips').querySelectorAll('.m-chip').forEach(b => b.onclick = () => {
       const id = b.dataset.cat;
@@ -88,7 +117,7 @@ function waUpdateCart() {
         p.name.toLowerCase().includes(term) || (p.description || '').toLowerCase().includes(term)) : c.products;
       return `
         <section class="m-sec">
-          <h2 class="m-cat">${esc(c.name)}</h2>
+          <h2 class="m-cat"><span class="m-cat-ico">${catIcon(c.name)}</span>${esc(c.name)}</h2>
           ${filtered.length ? `<div class="m-grid">${filtered.map(productCard).join('')}</div>`
                             : '<div class="m-sec-empty">لا توجد أصناف مطابقة</div>'}
         </section>`;

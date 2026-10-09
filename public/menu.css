@@ -23,7 +23,20 @@ body {
   color: #fff;
   padding: 34px 20px 26px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
+.m-head::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(255,255,255,.14) 0, transparent 42%),
+    radial-gradient(circle at 85% 5%, rgba(255,255,255,.10) 0, transparent 38%),
+    radial-gradient(circle at 70% 110%, rgba(0,0,0,.16) 0, transparent 45%);
+  pointer-events: none;
+}
+.m-head > * { position: relative; z-index: 1; }
 .m-logo {
   width: 92px;
   height: 92px;
@@ -65,14 +78,18 @@ body {
   border: 1px solid var(--line);
   background: var(--card);
   color: var(--ink);
-  padding: 8px 18px;
+  padding: 8px 16px;
   border-radius: 999px;
   font: inherit;
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
   transition: all .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
+.m-chip-ico { font-size: 15px; line-height: 1; }
 .m-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 .m-main { max-width: 680px; margin: 0 auto; padding: 10px 14px 20px; }
@@ -90,6 +107,7 @@ body {
   align-items: center;
   gap: 8px;
 }
+.m-cat-ico { font-size: 22px; line-height: 1; }
 .m-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
 
 .m-item {
@@ -101,7 +119,9 @@ body {
   flex-direction: column;
   gap: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  transition: transform .15s, box-shadow .15s;
 }
+.m-item:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,.09); }
 .m-pimg {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -112,7 +132,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.m-ph { font-size: 44px; font-weight: 900; color: var(--accent); }
+.m-ph { font-size: 58px; background: linear-gradient(135deg, #fff3e2, #ffe3c2); }
+.m-ph span { line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,.12)); }
 .m-pinfo { flex: 1; }
 .m-pname { font-weight: 800; font-size: 15.5px; }
 .m-pdesc { font-size: 12.5px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
