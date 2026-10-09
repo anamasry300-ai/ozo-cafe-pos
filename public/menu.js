@@ -3,6 +3,7 @@ import { esc } from './js/ui.js';
 const $ = sel => document.querySelector(sel);
 
 const FOOD_ICONS = [
+  [/صاروخ|صواريخ/, '🍟'],
   [/بطاطس|شيبس|شيبسي|فرايد أخضر/, '🍟'],
   [/برجر|برغر|هامبرغر/, '🍔'],
   [/بيتزا|بيتز/, '🍕'],
@@ -73,7 +74,7 @@ function waUpdateCart() {
   }
   let sum = 0, txt = '';
   for (const it of waCart) { sum += it.price * it.qty; txt += it.qty + ' × ' + it.name + '\n'; }
-  c.innerHTML = '<div style="padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff">' + txt.replace(/\n/g, '<br>') + '<div style="margin-top:8px;font-weight:900">الإجمالي: ' + sum.toFixed(sum % 1 ? 2 : 0) + ' ج.م</div></div>';
+  c.innerHTML = '<div class="wa-cart-box">' + txt.replace(/\n/g, '<br>') + '<div class="wa-cart-total">الإجمالي: ' + sum.toFixed(sum % 1 ? 2 : 0) + ' ج.م</div></div>';
   b.disabled = false;
   const msg = encodeURIComponent('طلب من المنيو:\n' + waCart.map(i => i.qty + ' × ' + i.name + ' — ' + i.price.toFixed(2) + ' ج.م').join('\n') + '\n\nالإجمالي: ' + sum.toFixed(2) + ' ج.م');
   b.onclick = () => window.open('https://wa.me/201212255168?text=' + msg, '_blank');

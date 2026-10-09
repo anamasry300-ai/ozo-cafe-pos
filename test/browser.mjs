@@ -115,7 +115,7 @@ try {
   await wait(500);
   const modalTitle = await txt('.modal-head h3');
   chk(modalTitle && modalTitle.includes('INV-'), `receipt modal: ${modalTitle}`);
-  chk((await txt('.modal-body') || '').includes('بطاطس عادي'), 'receipt contains item');
+  chk((await txt('.modal-body') || '').includes('صاروخ بطاطس'), 'receipt contains item');
   await page.click('#r-close');
   await wait(400);
   const invAfter = await txt('#inv-no');

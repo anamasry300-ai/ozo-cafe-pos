@@ -48,7 +48,7 @@ ok(r.status === 401, 'invalid token rejected');
 console.log('2) الأصناف الافتراضية');
 r = await req('GET', '/products', null, admin);
 ok(r.status === 200 && r.data.length === 13, `13 seeded products (got ${r.data?.length})`);
-const expected = { 'بطاطس عادي': 30, 'بطاطس موتزاريلا صوصات': 40, 'بطاطس مكس جبن تركي مدخن': 50, 'بطاطس مكس جبن بسطرمة': 60, 'بطاطس استربس': 65, 'بطاطس زنجر': 70, 'بطاطس شيش': 70, 'بطاطس سجق': 60, 'بطاطس كفتة': 65, 'بطاطس كبدة': 60, 'بطاطس هوت دوج': 55, 'بطاطس كوردن بلو': 60, 'بطاطس فاهيتا': 70 };
+const expected = { 'صاروخ بطاطس': 30, 'صاروخ موتزاريلا': 40, 'صاروخ مكس جبن تركي': 50, 'صاروخ مكس جبن بسطرمة': 60, 'صاروخ استربس': 65, 'صاروخ زنجر': 70, 'صاروخ شيش': 70, 'صاروخ سجق': 60, 'صاروخ كفتة': 65, 'صاروخ كبدة': 60, 'صاروخ هوت دوج': 55, 'صاروخ كوردن بلو': 60, 'صاروخ فاهيتا': 70 };
 for (const [name, price] of Object.entries(expected)) {
   const p = r.data.find(x => x.name === name);
   ok(p && eq(p.price, price), `product "${name}" price ${price}`);
@@ -306,7 +306,7 @@ ok(r.status === 200 && r.data.store_name === 'كافيه الأصيل', 'cashier
 
 console.log('17) البحث');
 r = await req('GET', '/products?q=زنجر', null, admin2);
-ok(r.data.length === 1 && r.data[0].name === 'بطاطس زنجر', 'product search');
+ok(r.data.length === 1 && r.data[0].name === 'صاروخ زنجر', 'product search');
 r = await req('GET', `/sales?q=${sale.invoice_no}`, null, admin2);
 ok(r.data.length >= 1, 'invoice search by number');
 r = await req('GET', '/sales?q=استربس', null, admin2);

@@ -169,19 +169,19 @@ CREATE INDEX IF NOT EXISTS idx_recipe_product ON recipe_items(product_id);
 `;
 
 const SEED_PRODUCTS = [
-  ['بطاطس عادي', 30],
-  ['بطاطس موتزاريلا صوصات', 40],
-  ['بطاطس مكس جبن تركي مدخن', 50],
-  ['بطاطس مكس جبن بسطرمة', 60],
-  ['بطاطس استربس', 65],
-  ['بطاطس زنجر', 70],
-  ['بطاطس شيش', 70],
-  ['بطاطس سجق', 60],
-  ['بطاطس كفتة', 65],
-  ['بطاطس كبدة', 60],
-  ['بطاطس هوت دوج', 55],
-  ['بطاطس كوردن بلو', 60],
-  ['بطاطس فاهيتا', 70],
+  ['صاروخ بطاطس', 30],
+  ['صاروخ موتزاريلا', 40],
+  ['صاروخ مكس جبن تركي', 50],
+  ['صاروخ مكس جبن بسطرمة', 60],
+  ['صاروخ استربس', 65],
+  ['صاروخ زنجر', 70],
+  ['صاروخ شيش', 70],
+  ['صاروخ سجق', 60],
+  ['صاروخ كفتة', 65],
+  ['صاروخ كبدة', 60],
+  ['صاروخ هوت دوج', 55],
+  ['صاروخ كوردن بلو', 60],
+  ['صاروخ فاهيتا', 70],
 ];
 
 const DEFAULT_SETTINGS = {
@@ -198,12 +198,12 @@ export function initDb() {
   const catCount = db.prepare('SELECT COUNT(*) c FROM categories').get().c;
   if (catCount === 0) {
     const insCat = db.prepare('INSERT INTO categories (name, sort_order) VALUES (?, ?)');
-    insCat.run('بطاطس', 1);
+    insCat.run('صواريخ', 1);
   }
 
   const prodCount = db.prepare('SELECT COUNT(*) c FROM products').get().c;
   if (prodCount === 0) {
-    const cat = db.prepare('SELECT id FROM categories WHERE name = ?').get('بطاطس');
+    const cat = db.prepare('SELECT id FROM categories WHERE name = ?').get('صواريخ');
     const ins = db.prepare('INSERT INTO products (name, category_id, price) VALUES (?, ?, ?)');
     for (const [name, price] of SEED_PRODUCTS) ins.run(name, cat ? cat.id : null, price);
   }

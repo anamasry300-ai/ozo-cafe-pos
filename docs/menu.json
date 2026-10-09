@@ -7,95 +7,95 @@
   "categories": [
     {
       "id": 1,
-      "name": "بطاطس",
+      "name": "صواريخ",
       "products": [
         {
           "id": 1,
-          "name": "بطاطس عادي",
+          "name": "صاروخ بطاطس",
           "price": 30,
           "image": "images/fries-plain.jpg",
           "description": ""
         },
         {
           "id": 2,
-          "name": "بطاطس موتزاريلا صوصات",
+          "name": "صاروخ موتزاريلا",
           "price": 40,
           "image": "images/fries-cheese.jpg",
           "description": ""
         },
         {
           "id": 3,
-          "name": "بطاطس مكس جبن تركي مدخن",
+          "name": "صاروخ مكس جبن تركي",
           "price": 50,
           "image": "images/fries-cheese-herbs.jpg",
           "description": ""
         },
         {
           "id": 4,
-          "name": "بطاطس مكس جبن بسطرمة",
+          "name": "صاروخ مكس جبن بسطرمة",
           "price": 60,
           "image": "images/fries-loaded-chili.jpg",
           "description": ""
         },
         {
           "id": 5,
-          "name": "بطاطس استربس",
+          "name": "صاروخ استربس",
           "price": 65,
           "image": "images/fries-chicken2.jpg",
           "description": ""
         },
         {
           "id": 6,
-          "name": "بطاطس زنجر",
+          "name": "صاروخ زنجر",
           "price": 70,
           "image": "images/fries-zinger.jpg",
           "description": ""
         },
         {
           "id": 7,
-          "name": "بطاطس شيش",
+          "name": "صاروخ شيش",
           "price": 70,
           "image": "images/fries-kebab.jpg",
           "description": ""
         },
         {
           "id": 8,
-          "name": "بطاطس سجق",
+          "name": "صاروخ سجق",
           "price": 60,
           "image": "images/fries-hotdog.jpg",
           "description": ""
         },
         {
           "id": 9,
-          "name": "بطاطس كفتة",
+          "name": "صاروخ كفتة",
           "price": 65,
           "image": "images/fries-kebab2.jpg",
           "description": ""
         },
         {
           "id": 10,
-          "name": "بطاطس كبدة",
+          "name": "صاروخ كبدة",
           "price": 60,
           "image": "images/fries-meat.jpg",
           "description": ""
         },
         {
           "id": 11,
-          "name": "بطاطس هوت دوج",
+          "name": "صاروخ هوت دوج",
           "price": 55,
           "image": "images/fries-dip.jpg",
           "description": ""
         },
         {
           "id": 12,
-          "name": "بطاطس كوردن بلو",
+          "name": "صاروخ كوردن بلو",
           "price": 60,
           "image": "images/fries-cordon.jpg",
           "description": ""
         },
         {
           "id": 13,
-          "name": "بطاطس فاهيتا",
+          "name": "صاروخ فاهيتا",
           "price": 70,
           "image": "images/fries-fajita.jpg",
           "description": ""

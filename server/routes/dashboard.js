@@ -6,7 +6,11 @@ import { PAYMENT_METHODS } from './sales.js';
 const router = Router();
 router.use(requireAuth);
 
-const today = () => new Date().toISOString().slice(0, 10);
+const today = () => {
+  const d = new Date();
+  const p = n => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+};
 
 function range(req) {
   const to = req.query.to || today();
