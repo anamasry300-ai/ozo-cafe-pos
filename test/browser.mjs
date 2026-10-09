@@ -349,6 +349,9 @@ try {
     return b.onclick ? String(b.onclick) : '';
   });
   chk(waHref.includes('wa.me/'), 'whatsapp button opens wa.me link');
+  chk(await menuPage.$eval('.m-logo', el => el.tagName === 'IMG' && /logo\.jpeg/.test(el.src)), 'menu shows logo image');
+  const qrOk = await menuPage.$eval('#m-qr', el => el.complete && el.naturalWidth > 0 && /\/api\/qr/.test(el.src)).catch(() => false);
+  chk(qrOk, 'menu shows share QR code');
   await menuPage.close();
 } catch (e) {
   bad++;

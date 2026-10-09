@@ -47,7 +47,7 @@ function waUpdateCart() {
   c.innerHTML = '<div style="padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff">' + txt.replace(/\n/g, '<br>') + '<div style="margin-top:8px;font-weight:900">الإجمالي: ' + sum.toFixed(sum % 1 ? 2 : 0) + ' ج.م</div></div>';
   b.disabled = false;
   const msg = encodeURIComponent('طلب من المنيو:\n' + waCart.map(i => i.qty + ' × ' + i.name + ' — ' + i.price.toFixed(2) + ' ج.م').join('\n') + '\n\nالإجمالي: ' + sum.toFixed(2) + ' ج.م');
-  b.onclick = () => window.open('https://wa.me/2010977662593?text=' + msg, '_blank');
+  b.onclick = () => window.open('https://wa.me/201212255168?text=' + msg, '_blank');
 }
 
 
@@ -104,6 +104,8 @@ function waUpdateCart() {
   renderChips(null);
   renderSections(null);
   waUpdateCart();
+  const qrImg = $('#m-qr');
+  if (qrImg) qrImg.src = '/api/qr?data=' + encodeURIComponent(location.href);
   $('#m-search').addEventListener('input', () => renderSections(null));
 }
 
