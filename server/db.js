@@ -169,19 +169,19 @@ CREATE INDEX IF NOT EXISTS idx_recipe_product ON recipe_items(product_id);
 `;
 
 const SEED_PRODUCTS = [
-  ['صاروخ بطاطس', 30, 'images/sand-01-batates.jpg'],
-  ['صاروخ موتزاريلا', 40, 'images/sand-02-mozzarella.jpg'],
-  ['صاروخ مكس جبن تركي', 50, 'images/sand-03-turkey-cheese.jpg'],
-  ['صاروخ مكس جبن بسطرمة', 60, 'images/sand-04-basterma.jpg'],
-  ['صاروخ استربس', 65, 'images/sand-05-strips.jpg'],
-  ['صاروخ زنجر', 70, 'images/sand-06-zinger.jpg'],
-  ['صاروخ شيش', 70, 'images/sand-07-shish.jpg'],
-  ['صاروخ سجق', 60, 'images/sand-08-sogok.jpg'],
-  ['صاروخ كفتة', 65, 'images/sand-09-kofta.jpg'],
-  ['صاروخ كبدة', 60, 'images/sand-10-kebda.jpg'],
-  ['صاروخ هوت دوج', 55, 'images/sand-11-hotdog.jpg'],
-  ['صاروخ كوردن بلو', 60, 'images/sand-12-cordon.jpg'],
-  ['صاروخ فاهيتا', 70, 'images/sand-13-fajita.jpg'],
+  ['صاروخ بطاطس', 30, 'images/p01-batates.jpg'],
+  ['صاروخ موتزاريلا', 40, 'images/p02-mozzarella.jpg'],
+  ['صاروخ مكس جبن تركي', 50, 'images/p03-turkey-cheese.jpg'],
+  ['صاروخ مكس جبن بسطرمة', 60, 'images/p04-basterma.jpg'],
+  ['صاروخ استربس', 65, 'images/p05-strips.jpg'],
+  ['صاروخ زنجر', 70, 'images/p06-zinger.jpg'],
+  ['صاروخ شيش', 70, 'images/p07-shish.jpg'],
+  ['صاروخ سجق', 60, 'images/p08-sogok.jpg'],
+  ['صاروخ كفتة', 65, 'images/p09-kofta.jpg'],
+  ['صاروخ كبدة', 60, 'images/p10-kebda.jpg'],
+  ['صاروخ هوت دوج', 55, 'images/p11-hotdog.jpg'],
+  ['صاروخ كوردن بلو', 60, 'images/p12-cordon.jpg'],
+  ['صاروخ فاهيتا', 70, 'images/p13-fajita.jpg'],
 ];
 
 const DEFAULT_SETTINGS = {

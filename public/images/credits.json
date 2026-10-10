@@ -1,18 +1,8 @@
 {
-  "source": "Pexels - https://www.pexels.com (free to use, attribution not required)",
-  "photos": {
-    "sand-01-batates.jpg": "https://images.pexels.com/photos/6941000/",
-    "sand-02-mozzarella.jpg": "https://images.pexels.com/photos/14639388/",
-    "sand-03-turkey-cheese.jpg": "https://images.pexels.com/photos/14774691/",
-    "sand-04-basterma.jpg": "https://images.pexels.com/photos/18177335/",
-    "sand-05-strips.jpg": "https://images.pexels.com/photos/19585047/",
-    "sand-06-zinger.jpg": "https://images.pexels.com/photos/27744717/",
-    "sand-07-shish.jpg": "https://images.pexels.com/photos/33233601/",
-    "sand-08-sogok.jpg": "https://images.pexels.com/photos/36879179/",
-    "sand-09-kofta.jpg": "https://images.pexels.com/photos/32986492/",
-    "sand-10-kebda.jpg": "https://images.pexels.com/photos/5779364/",
-    "sand-11-hotdog.jpg": "https://images.pexels.com/photos/3023479/",
-    "sand-12-cordon.jpg": "https://images.pexels.com/photos/28442524/",
-    "sand-13-fajita.jpg": "https://images.pexels.com/photos/12464909/"
+  "note": "p01,p03-p10,p13 = صور المطعم الحقيقية. p02,p11,p12 = مؤقتة من Pexels (بانتظار صور حقيقية).",
+  "pexels": {
+    "p02-mozzarella.jpg": "https://www.pexels.com/photo/14639388",
+    "p11-hotdog.jpg": "https://www.pexels.com/photo/3023479",
+    "p12-cordon.jpg": "https://www.pexels.com/photo/28442524"
   }
 }
