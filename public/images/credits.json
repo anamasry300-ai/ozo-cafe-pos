@@ -1,8 +1,8 @@
 {
-  "note": "p01,p03-p10,p13 = صور المطعم الحقيقية. p02,p11,p12 = مؤقتة من Pexels (بانتظار صور حقيقية).",
+  "note": "p01,p03-p10,p13 = صور المطعم الحقيقية. p02,p11 = مؤقتة من Pexels. p12 = ساندوتش دجاج مقرمش من Pexels.",
   "pexels": {
     "p02-mozzarella.jpg": "https://www.pexels.com/photo/14639388",
     "p11-hotdog.jpg": "https://www.pexels.com/photo/3023479",
-    "p12-cordon.jpg": "https://www.pexels.com/photo/28442524"
+    "p12-cordon.jpg": "https://www.pexels.com/photo/19585047"
   }
 }
